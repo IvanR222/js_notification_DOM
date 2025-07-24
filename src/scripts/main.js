@@ -20,11 +20,12 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   notification.style.top = `${posTop}px`;
   notification.style.right = `${posRight}px`;
 
+  document.body.append(notification);
+
   setTimeout(() => {
-    notification.style.display = 'none';
+    notification.remove();
   }, 2000);
 
-  document.body.append(notification);
 };
 
 pushNotification(
